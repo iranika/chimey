@@ -15,6 +15,16 @@ extern {
 }
 
 #[wasm_bindgen]
+pub struct Entity {}
+
+impl Entity{
+    pub fn add(a: i32, b:i32) -> i32{
+        domain::Entity::add(a, b)
+    }
+}
+
+
+#[wasm_bindgen]
 pub fn greet() {
     alert("Hello, wasm!");
 }

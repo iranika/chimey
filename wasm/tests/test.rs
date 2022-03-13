@@ -4,12 +4,14 @@
 
 extern crate wasm_bindgen_test;
 use wasm_bindgen_test::*;
-use domain::*;
+extern crate wasm;
 
 wasm_bindgen_test_configure!(run_in_browser);
 
 #[wasm_bindgen_test]
 fn pass() {
-    assert_eq!(domain::add(1, 2), 3);
+    //assert_eq!(domain::add(1, 2), 3);
+    assert_eq!(wasm::Entity::add(1, 2), 3);
+    //assert_eq!(wasm::add())
 }
 
