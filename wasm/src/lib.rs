@@ -17,9 +17,11 @@ extern {
 #[wasm_bindgen]
 pub struct Entity {}
 
-impl Entity{
+#[wasm_bindgen]
+impl Entity {
     pub fn add(a: i32, b:i32) -> i32{
-        domain::Entity::add(a, b)
+        let wa = domain::Entity{};
+        wa.add(a, b)
     }
 }
 

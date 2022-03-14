@@ -1,16 +1,15 @@
 
 pub trait Domain{
-    fn add(a: i32, b:i32) -> i32;
-}
-
-pub struct Entity;
-
-impl Entity {
-    pub fn add(a: i32, b: i32) -> i32{
-        return a + b
+    fn add(&self, a: i32, b: i32) -> i32{
+        a + b
     }
 }
 
+pub struct Entity;
+impl Domain for Entity {}
+
 pub fn hello(){
+    let dm = Entity{};
+    dm.add(1,2);
     print!("Hello");
 }
